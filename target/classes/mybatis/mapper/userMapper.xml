@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.information.mapper.UserMapper">
+
+    <select id="getUser" parameterType="java.lang.String" resultType="com.information.domain.User">
+        select * from user where username=#{userName}
+    </select>
+
+    <insert id="setUserByPhone">
+        insert into user(username,password,phone,status) values (#{phone},#{password},#{phone},0)
+    </insert>
+
+    <insert id="setUserByEmail">
+        insert into user(username,password,email,status) values (#{email},#{password},#{email},0)
+    </insert>
+
+    <update id="updateUserCollection">
+        update user set collection = #{collection} where username = #{userName}
+    </update>
+</mapper>
