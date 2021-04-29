@@ -6,6 +6,7 @@ import org.apache.tomcat.util.buf.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -80,5 +81,9 @@ public class UserService {
             userMapper.updateUserCollection(username,"");
         }
 
+    }
+
+    public List<User> listAll() {
+        return userMapper.listAll();
     }
 }

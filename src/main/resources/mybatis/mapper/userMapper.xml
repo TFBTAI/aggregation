@@ -20,4 +20,8 @@
     <update id="updateUserCollection">
         update user set collection = #{collection} where username = #{userName}
     </update>
+
+    <select id="listAll" resultType="com.information.domain.User">
+        select * from user;
+    </select>
 </mapper>

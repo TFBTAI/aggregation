@@ -3,12 +3,11 @@ package com.information.controller;
 import com.information.domain.User;
 import com.information.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "http://localhost:8081")
+import java.util.List;
+
+@CrossOrigin(origins = "*")
 @RestController
 public class UserController {
 
@@ -31,5 +30,10 @@ public class UserController {
     @ResponseBody
     public void updateUserCollection(String username,String collection){
         userService.updateUserCollection(username,collection);
+    }
+
+    @GetMapping("user/list")
+    public List<User> listAll() {
+        return userService.listAll();
     }
 }
