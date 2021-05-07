@@ -5,6 +5,7 @@ import com.information.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 @CrossOrigin(origins = "*")
@@ -22,7 +23,7 @@ public class UserController {
 
     @RequestMapping("/login")
     @ResponseBody
-    public User login(String username,String password){
+    public HashMap<String, String> login(String username, String password){
         return userService.login(username,password);
     }
 

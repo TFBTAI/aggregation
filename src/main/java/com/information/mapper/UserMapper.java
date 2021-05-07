@@ -13,6 +13,10 @@ public interface UserMapper {
 
     public User getUser(String userName);
 
+    public void userLogin(String userName);
+
+    public void userOut(String userName);
+
     public void setUserByPhone(@Param("phone")String phone, @Param("password")String password);
 
     public void setUserByEmail(@Param("email")String email, @Param("password")String password);

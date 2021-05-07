@@ -21,6 +21,14 @@
         update user set collection = #{collection} where username = #{userName}
     </update>
 
+    <update id="userLogin" parameterType="java.lang.String">
+        update user set status = 1 where username = #{userName}
+    </update>
+
+    <update id="userOut" parameterType="java.lang.String">
+        update user set status = 0 where username = #{userName}
+    </update>
+
     <select id="listAll" resultType="com.information.domain.User">
         select * from user;
     </select>
